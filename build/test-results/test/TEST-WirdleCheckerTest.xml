@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="WirdleCheckerTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-01-15T21:42:33" hostname="MSI" time="0.038">
+  <properties/>
+  <testcase name="mixed casing perfect match()" classname="WirdleCheckerTest" time="0.03"/>
+  <testcase name="different lengths don't throw()" classname="WirdleCheckerTest" time="0.0"/>
+  <testcase name="perfect match()" classname="WirdleCheckerTest" time="0.0"/>
+  <testcase name="partial match()" classname="WirdleCheckerTest" time="0.0"/>
+  <testcase name="double letters in actual()" classname="WirdleCheckerTest" time="0.002"/>
+  <testcase name="double letters in guess()" classname="WirdleCheckerTest" time="0.001"/>
+  <testcase name="no matches()" classname="WirdleCheckerTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
