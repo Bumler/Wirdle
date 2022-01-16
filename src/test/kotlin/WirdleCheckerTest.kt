@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
 class WirdleCheckerTest {
-    private val wirdleChecker: WirdleChecker = WirdleChecker(GuessSanitizer())
+    private val wirdleChecker: WirdleChecker = WirdleChecker()
 
     @Test
     fun `perfect match`(){

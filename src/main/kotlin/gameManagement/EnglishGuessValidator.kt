@@ -1,9 +1,10 @@
 package gameManagement
 
+//Todo this should also check for if a word is real or not.
 class EnglishGuessValidator(
     private val expectedWordLength: Int
 ): GuessValidator {
-    private val alphaRegex: Regex = Regex("([A-Z]|[a-z])\\w+")
+    private val alphaRegex: Regex = Regex("^[a-zA-Z]*\$")
 
     override fun validate(guess: String): GuessValidationResult {
         if(guess.length != expectedWordLength){

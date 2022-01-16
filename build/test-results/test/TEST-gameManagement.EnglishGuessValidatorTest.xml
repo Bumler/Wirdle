@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gameManagement.EnglishGuessValidatorTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-01-16T01:00:49" hostname="MSI" time="0.023">
+  <properties/>
+  <testcase name="can't have numbers()" classname="gameManagement.EnglishGuessValidatorTest" time="0.02"/>
+  <testcase name="invalid lengths are invalid()" classname="gameManagement.EnglishGuessValidatorTest" time="0.001"/>
+  <testcase name="valid words are valid()" classname="gameManagement.EnglishGuessValidatorTest" time="0.001"/>
+  <testcase name="can't have symbols()" classname="gameManagement.EnglishGuessValidatorTest" time="0.0"/>
+  <testcase name="definitely can't have umlauts()" classname="gameManagement.EnglishGuessValidatorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
