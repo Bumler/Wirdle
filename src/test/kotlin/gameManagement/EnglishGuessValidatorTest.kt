@@ -11,30 +11,30 @@ class EnglishGuessValidatorTest {
     @Test
     fun `invalid lengths are invalid`(){
         val testString = "shoe"
-        assertFalse { englishGuessValidator.validate(testString).isValid }
+        assertFalse { englishGuessValidator.validate(testString).isSuccess }
     }
 
     @Test
     fun `can't have symbols`(){
         val testString = "shoe!"
-        assertFalse { englishGuessValidator.validate(testString).isValid }
+        assertFalse { englishGuessValidator.validate(testString).isSuccess }
     }
 
     @Test
     fun `can't have numbers`(){
         val testString = "shoe1"
-        assertFalse { englishGuessValidator.validate(testString).isValid }
+        assertFalse { englishGuessValidator.validate(testString).isSuccess }
     }
 
     @Test
     fun `definitely can't have umlauts`(){
         val testString = "schön"
-        assertFalse { englishGuessValidator.validate(testString).isValid }
+        assertFalse { englishGuessValidator.validate(testString).isSuccess }
     }
 
     @Test
     fun `valid words are valid`(){
         val testString = "cacti"
-        assertTrue { englishGuessValidator.validate(testString).isValid }
+        assertTrue { englishGuessValidator.validate(testString).isSuccess }
     }
 }

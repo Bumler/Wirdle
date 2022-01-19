@@ -1,5 +1,7 @@
 package gameManagement
 
+import util.SimpleResult
+
 interface GuessValidator {
-    fun validate(guess: String): GuessValidationResult
+    fun validate(guess: String): SimpleResult
 }

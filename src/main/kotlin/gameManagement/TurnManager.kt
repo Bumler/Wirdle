@@ -14,7 +14,7 @@ class TurnManager(
         val sanitizedGuess = guessSanitizer.sanitizeString(guess)
         val validationResult = guessValidator.validate(sanitizedGuess)
 
-        if (!validationResult.isValid){
+        if (!validationResult.isSuccess){
             return TurnResult(validationResult, gameData, playerData)
         }
 

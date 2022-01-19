@@ -21,14 +21,14 @@ class MessageInputProcessor(
     }
 
     private fun tryRunCommand(inputString: String, playerData: PlayerData): MessageResponse? {
-        throw NotImplementedError()
+        throw NotImplementedError() //todo add a command factory here
     }
 
     private fun tryToTakeATurn(inputString: String, playerData: PlayerData): MessageResponse? {
         val gameData = gameRetriever.retrieveGameForPlayer(playerData) ?: return null
 
         val turnResult = turnManager.takeATurn(playerData, gameData, inputString)
-        return if (turnResult.validationResult.isValid)
+        return if (turnResult.validationResult.isSuccess)
             MessageResponse(turnResultMessageDecorator.formatMessage(turnResult), false)
             else MessageResponse(turnResult.validationResult.invalidExplanation, true)
     }
