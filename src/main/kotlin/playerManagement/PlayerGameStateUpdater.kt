@@ -12,17 +12,13 @@ class PlayerGameStateUpdater(
             return playerData
 
         val isWin = gameData.gameState == GameState.WON
-        val updatedWins = if (isWin) playerData.wins + 1 else playerData.wins
-        val updatedTurnCompleted = if (isWin) playerData.turnCompleted + gameData.turnsTaken
-            else playerData.turnCompleted
+        val result = if (isWin) GameResult.win(gameData.gameId, gameData.turnsTaken)
+            else GameResult.lose(gameData.gameId)
 
         val updatedPlayerInfo = PlayerData(
             playerData.playerId,
             null,
-            updatedWins,
-            playerData.totalGamesPlayed + 1,
-            playerData.previousGames + gameData.gameId,
-            updatedTurnCompleted
+            playerData.previousGames + result
         )
 
         playerRepo.updatePlayer(updatedPlayerInfo)

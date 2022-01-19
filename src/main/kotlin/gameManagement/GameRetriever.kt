@@ -2,6 +2,7 @@ package gameManagement
 
 import dataLayer.GameRepo
 import dataLayer.PlayerRepo
+import playerManagement.GameResult
 import playerManagement.PlayerData
 import java.util.*
 
@@ -26,10 +27,7 @@ class GameRetriever(
         val updatedPlayerData = PlayerData(
             playerData.playerId,
             null,
-            playerData.wins,
-            playerData.totalGamesPlayed,
-            playerData.previousGames + gameInProgress,
-            playerData.turnCompleted
+            playerData.previousGames + GameResult.error(gameInProgress)
         )
         playerRepo.updatePlayer(updatedPlayerData)
     }
