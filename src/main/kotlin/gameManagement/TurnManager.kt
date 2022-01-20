@@ -2,10 +2,11 @@ package gameManagement
 
 import playerManagement.PlayerData
 import playerManagement.PlayerGameStateUpdater
+import util.InputSanitizer
 
 //consider wrapping this in a try catch that wipes a players game so that no one is stuck
 class TurnManager(
-    private val guessSanitizer: GuessSanitizer,
+    private val guessSanitizer: InputSanitizer,
     private val guessValidator: GuessValidator,
     private val guessManager: GuessManager,
     private val playerGameStateUpdater: PlayerGameStateUpdater

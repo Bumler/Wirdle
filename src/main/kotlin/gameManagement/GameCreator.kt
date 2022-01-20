@@ -26,6 +26,6 @@ class GameCreator(
         )
 
         playerRepo.updatePlayer(updatedPlayerData)
-        return SimpleResult.success()
+        return SimpleResult.success("Game created successfully.")
     }
 }

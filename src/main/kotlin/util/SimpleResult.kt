@@ -12,5 +12,9 @@ data class SimpleResult private constructor(
         fun success(): SimpleResult {
             return SimpleResult(true, "")
         }
+
+        fun success(message: String): SimpleResult {
+            return SimpleResult(true, message)
+        }
     }
 }

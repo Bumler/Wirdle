@@ -1,6 +1,5 @@
 import wirdleLogic.WirdleChecker
 import wirdleLogic.WirdleResult
-import gameManagement.GuessSanitizer
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
