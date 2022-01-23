@@ -10,7 +10,7 @@ class CommandFactory(
     private val gameCreator: GameCreator,
     ) {
     private val commandChar = "!"
-    private val play = "{$commandChar}PLAY"
+    private val play = "${commandChar}PLAY"
 
     fun runCommand(command: String, playerData: PlayerData): SimpleResult? {
         val sanitizedCommand = sanitizer.sanitizeString(command)

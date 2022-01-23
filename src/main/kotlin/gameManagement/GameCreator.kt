@@ -14,7 +14,7 @@ class GameCreator(
             return SimpleResult.failure("Can't start a game with another game in progress. Please make a guess instead")
         }
 
-        val newWord = wordRepo.getWord()
+        val newWord = wordRepo.getNewWord(playerData.getPreviousWords())
         val newGame = GameData.create(newWord)
 
         gameRepo.createGame(newGame)

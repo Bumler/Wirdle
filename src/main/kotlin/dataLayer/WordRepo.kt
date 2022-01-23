@@ -1,5 +1,7 @@
 package dataLayer
 
+import java.util.*
+
 interface WordRepo {
-    fun getWord(): String
+    fun getNewWord(wordsUsed: Set<UUID>): Word
 }

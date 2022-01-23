@@ -1,5 +1,6 @@
 package gameManagement
 
+import dataLayer.Word
 import java.util.*
 
 data class GameData(
@@ -8,10 +9,10 @@ data class GameData(
     val lettersEliminated: Set<Char>,
     val turnsTaken: Int,
     val gameState: GameState,
-    val actualWord: String
+    val actualWord: Word
 ){
     companion object {
-        fun create(actualWord: String): GameData{
+        fun create(actualWord: Word): GameData{
             return GameData(
                 UUID.randomUUID(),
                 listOf(),

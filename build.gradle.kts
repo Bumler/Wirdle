@@ -13,6 +13,7 @@ repositories {
 }
 
 dependencies {
+    implementation("io.insert-koin:koin-java:2.0.1")
     testImplementation(kotlin("test"))
 }
 

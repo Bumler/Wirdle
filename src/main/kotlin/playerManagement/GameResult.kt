@@ -7,37 +7,27 @@ data class GameResult(
     val gameId: UUID,
     val turnComplete: Int,
     val isWin: Boolean,
-    val isError: Boolean,
-    val completeDate: LocalDateTime
+    val completeDate: LocalDateTime,
+    val wordId: UUID
 ) {
     companion object {
-        fun win(gameId: UUID, turnComplete: Int): GameResult{
+        fun win(gameId: UUID, turnComplete: Int, wordId: UUID): GameResult{
             return GameResult(
                 gameId,
                 turnComplete,
                 isWin = true,
-                isError =  false,
-                LocalDateTime.now()
+                LocalDateTime.now(),
+                wordId
             )
         }
 
-        fun lose(gameId: UUID): GameResult{
+        fun lose(gameId: UUID, wordId: UUID): GameResult{
             return GameResult(
                 gameId,
                 -1,
                 isWin = false,
-                isError =  false,
-                LocalDateTime.now()
-            )
-        }
-
-        fun error(gameId: UUID): GameResult{
-            return GameResult(
-                gameId,
-                -1,
-                isWin = false,
-                isError =  true,
-                LocalDateTime.now()
+                LocalDateTime.now(),
+                wordId
             )
         }
     }

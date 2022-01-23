@@ -17,17 +17,18 @@ class GameRetriever(
         val gameData = gameRepo.getGame(playerData.playerId)
 
         if (gameData == null){
-            removeFaultyGameFromPlayer(playerData, playerData.gameInProgress)
+            //todo need to log the failed gameId
+            removeFaultyGameFromPlayer(playerData)
         }
 
         return gameData
     }
 
-    private fun removeFaultyGameFromPlayer(playerData: PlayerData, gameInProgress: UUID) {
+    private fun removeFaultyGameFromPlayer(playerData: PlayerData) {
         val updatedPlayerData = PlayerData(
             playerData.playerId,
             null,
-            playerData.previousGames + GameResult.error(gameInProgress)
+            playerData.previousGames
         )
         playerRepo.updatePlayer(updatedPlayerData)
     }

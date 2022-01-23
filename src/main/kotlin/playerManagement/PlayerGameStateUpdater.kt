@@ -12,8 +12,8 @@ class PlayerGameStateUpdater(
             return playerData
 
         val isWin = gameData.gameState == GameState.WON
-        val result = if (isWin) GameResult.win(gameData.gameId, gameData.turnsTaken)
-            else GameResult.lose(gameData.gameId)
+        val result = if (isWin) GameResult.win(gameData.gameId, gameData.turnsTaken, gameData.actualWord.id)
+            else GameResult.lose(gameData.gameId, gameData.actualWord.id)
 
         val updatedPlayerInfo = PlayerData(
             playerData.playerId,

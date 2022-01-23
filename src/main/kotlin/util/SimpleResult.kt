@@ -2,7 +2,7 @@ package util
 
 data class SimpleResult private constructor(
     val isSuccess: Boolean,
-    val invalidExplanation: String = ""
+    val message: String = ""
 ) {
     companion object {
         fun failure(failureReason: String): SimpleResult {
