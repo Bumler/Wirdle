@@ -14,10 +14,11 @@ class GameRetriever(
         if (playerData.gameInProgress == null)
             return null
 
-        val gameData = gameRepo.getGame(playerData.playerId)
+        val gameData = gameRepo.getGame(playerData.gameInProgress)
 
         if (gameData == null){
             //todo need to log the failed gameId
+            println("Failed to retrieve a game.")
             removeFaultyGameFromPlayer(playerData)
         }
 

@@ -32,7 +32,7 @@ class MessageInputProcessor(
 
         val turnResult = turnManager.takeATurn(playerData, gameData, inputString)
         return if (turnResult.validationResult.isSuccess)
-            SimpleResult.success(turnResultMessageDecorator.formatMessage(turnResult))
+            SimpleResult.success(turnResultMessageDecorator.formatMessage(turnResult.gameData))
             else SimpleResult.failure(turnResult.validationResult.message)
     }
 }

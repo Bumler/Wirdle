@@ -13,5 +13,7 @@ class CliTestingApplication : KoinComponent {
         val result = messageInputProcessor.processCommand("!play", consoleId)
         println("Run succeeded")
         println(result.message)
+        val guessResult = messageInputProcessor.processCommand("Rides", consoleId)
+        println(guessResult.message)
     }
 }

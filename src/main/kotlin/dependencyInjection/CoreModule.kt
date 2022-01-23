@@ -19,12 +19,12 @@ val coreModule = module {
     single { TurnManager(get(), get(), get(), get())}
     single { InputSanitizer() }
     single<GuessValidator> { EnglishGuessValidator(wordLength) }
-    single { GuessManager(get(), get(), get(), get()) }
+    single { GuessManager(get(), get(), get()) }
     single { WirdleChecker() }
     single { GameStateJudge(maxTurns) }
     single { EliminatedLetterBuilder() }
     single { PlayerGameStateUpdater(get()) }
-    single { TurnResultMessageDecorator() }
+    single { TurnResultMessageDecorator(get(), maxTurns) }
     single { CommandFactory(get(), get())}
     single { GameCreator(get(), get(), get()) }
 }
