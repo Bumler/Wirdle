@@ -20,7 +20,7 @@ class TurnManager(
         }
 
         val updatedGameData = guessManager.makeAGuess(gameData, sanitizedGuess)
-        val updatedPlayerData = playerGameStateUpdater.update(playerData, gameData)
+        val updatedPlayerData = playerGameStateUpdater.update(playerData, updatedGameData)
 
         return TurnResult(validationResult, updatedGameData, updatedPlayerData)
     }

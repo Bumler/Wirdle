@@ -3,6 +3,7 @@ package commandLayer
 import gameManagement.EliminatedLetterBuilder
 import gameManagement.GameData
 import gameManagement.GameState
+import gameManagement.GuessedWord
 import util.EmojiUnicodeConstants.fullMoon
 import util.EmojiUnicodeConstants.halfMoon
 import util.EmojiUnicodeConstants.newMoon
@@ -21,7 +22,7 @@ class TurnResultMessageDecorator(private val eliminatedLetterBuilder: Eliminated
 
         val topLine = createTopLine(gameData)
         message.add(topLine)
-        val linesForResults = gameData.wordsGuessed.map { createLineForResult(it.result) }
+        val linesForResults = gameData.wordsGuessed.map { createLineForGuess(it) }
         message.addAll(linesForResults)
 
         if(gameData.gameState == GameState.IN_PROGRESS){
@@ -50,8 +51,8 @@ class TurnResultMessageDecorator(private val eliminatedLetterBuilder: Eliminated
         return "$turnsTaken/$maxTurns"
     }
 
-    private fun createLineForResult(guessResults: List<WirdleResult>): String {
-        return guessResults.map { resultMap[it] }.joinToString("")
+    private fun createLineForGuess(guessedWord: GuessedWord): String {
+        return "${guessedWord.result.map { resultMap[it] }.joinToString("")} - ${guessedWord.guess}"
     }
 
     private fun createWinMessage(actualWord: String): String {

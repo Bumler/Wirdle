@@ -22,6 +22,6 @@ class PlayerGameStateUpdater(
         )
 
         playerRepo.updatePlayer(updatedPlayerInfo)
-        return playerData
+        return updatedPlayerInfo
     }
 }
