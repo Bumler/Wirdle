@@ -18,7 +18,7 @@ val coreModule = module {
     single { GameRetriever(get(), get()) }
     single { TurnManager(get(), get(), get(), get())}
     single { InputSanitizer() }
-    single<GuessValidator> { EnglishGuessValidator(wordLength) }
+    single<GuessValidator> { EnglishGuessValidator(wordLength, get()) }
     single { GuessManager(get(), get(), get()) }
     single { WirdleChecker() }
     single { GameStateJudge(maxTurns) }

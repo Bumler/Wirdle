@@ -13,7 +13,7 @@ class TurnManager(
 ) {
     fun takeATurn(playerData: PlayerData, gameData: GameData, guess: String): TurnResult{
         val sanitizedGuess = guessSanitizer.sanitizeString(guess)
-        val validationResult = guessValidator.validate(sanitizedGuess)
+        val validationResult = guessValidator.validate(sanitizedGuess, gameData.wordsGuessed.map { it.guess }.toSet())
 
         if (!validationResult.isSuccess){
             return TurnResult(validationResult, gameData, playerData)
