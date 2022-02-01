@@ -72,4 +72,3 @@ outTmp/
 /test.output
 /kotlin-native/dist
 kotlin-ide/
-/src/main/kotlin/dataLayer/wordDataManager/files/
