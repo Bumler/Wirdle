@@ -2,9 +2,7 @@ package gameManagement
 
 import dataLayer.GameRepo
 import dataLayer.PlayerRepo
-import playerManagement.GameResult
 import playerManagement.PlayerData
-import java.util.*
 
 class GameRetriever(
     private val gameRepo: GameRepo,

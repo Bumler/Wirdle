@@ -22,14 +22,6 @@ class WirdleCheckerTest {
         assertEquals(expected, res)
     }
 
-    @Test
-    fun `mixed casing perfect match`(){
-        val res = wirdleChecker.checkWord("HENRY", "henry")
-        val expected = listOf(WirdleResult.EXACT_MATCH, WirdleResult.EXACT_MATCH, WirdleResult.EXACT_MATCH, WirdleResult.EXACT_MATCH, WirdleResult.EXACT_MATCH)
-
-        assertEquals(expected, res)
-    }
-
     @Test //It's a different responsibility to check for this
     fun `different lengths don't throw`(){
         val res = wirdleChecker.checkWord("henr", "henry")

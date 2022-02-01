@@ -40,7 +40,7 @@ class EnglishGuessValidatorTest {
 
     @Test
     fun `valid words are valid`(){
-        val testString = "cacti"
+        val testString = "CACTI"
         assertTrue { englishGuessValidator.validate(testString, previousGuesses).isSuccess }
     }
 }
